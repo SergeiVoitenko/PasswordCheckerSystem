@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка надійності пароля</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Перевірка надійності пароля</h1>
+        
+        <div class="password-input-container">
+            <input type="password" id="password-input" class="password-input" placeholder="Введіть пароль для перевірки" autocomplete="off">
+            <button type="button" id="toggle-password" class="toggle-password">👁️</button>
+        </div>
+        
+        <div id="password-strength">
+            <div id="strength-meter" class="strength-meter"></div>
+        </div>
+        
+        <div id="strength-text">Сила пароля: не вказано</div>
+        
+        <div class="password-info">
+            <h3>Вимоги до надійного пароля:</h3>
+            <div class="requirement">
+                <span id="length-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Мінімум 8 символів</span>
+            </div>
+            <div class="requirement">
+                <span id="uppercase-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Мінімум 1 велика літера</span>
+            </div>
+            <div class="requirement">
+                <span id="lowercase-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Мінімум 1 мала літера</span>
+            </div>
+            <div class="requirement">
+                <span id="number-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Мінімум 1 цифра</span>
+            </div>
+            <div class="requirement">
+                <span id="special-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Мінімум 1 спеціальний символ (!@#$%^&*)</span>
+            </div>
+            <div class="requirement">
+                <span id="common-icon" class="requirement-icon">○</span>
+                <span class="requirement-text">Не є поширеним паролем</span>
+            </div>
+        </div>
+        
+        <div id="feedback" class="feedback"></div>
+        
+        <div class="action-buttons">
+            <button id="generate-btn" class="button">Згенерувати надійний пароль</button>
+            <button id="copy-btn" class="button copy-button">Копіювати пароль</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
